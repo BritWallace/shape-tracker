@@ -11,6 +11,10 @@ describe('Quadrilateral', () => {
 });
 
 test('should correctly determine whether four lengths are not a quadrilateral', () => {
-  const notQuad = new Quadrilateral(3,9,22,3);
+  const notQuad = new Quadrilateral(3,6,9,22);
   expect(notQuad.checkType()).toEqual("not a quadrilateral");
+});
+test('should correctly determine whether four lengths are not a quadrilateral', () => {
+  const notQuad = new Quadrilateral(3,6,9,10);
+  expect(notQuad.checkType()).toEqual("is a quadrilateral");
 });

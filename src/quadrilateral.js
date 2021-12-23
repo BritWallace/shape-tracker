@@ -8,14 +8,18 @@ export default function Quadrilateral(side1, side2, side3, side4) {
 Quadrilateral.prototype.checkType = function() {
   let longestSide = this.side1;
 
-    // if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
-  //   return "not a triangle";
-  // } else if ((this.side1 !== this.side2) && ((this.side1 !== this.side3)) && ((this.side2 !== this.side3))) {
-  //   return "scalene triangle";
-  // }  else if ((this.side1 === this.side2) && (this.side1 === this.side3)) {
-  //   return "equilateral triangle";
-  // } else {
-  //   return "isosceles triangle";
-  // }
-  // return("not a quadrilateral");
+  if(longestSide < this.side2) {
+    longestSide = this.side2;
+  }
+  if(longestSide < this.side3) {
+    longestSide = this.side3;
+  }
+  if(longestSide < this.side4) {
+    longestSide = this.side4;
+  }
+  if((this.side1 + this.side2 + this.side3 + this.side4 - longestSide) > longestSide) {
+    return("is a quadrilateral");
+  } else {
+    return("not a quadrilateral");
+  }
 };  
