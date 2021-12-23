@@ -9,3 +9,8 @@ describe('Quadrilateral', () => {
     expect(quadrilateral.side4).toEqual(5);
   });
 });
+
+test('should correctly determine whether four lengths are not a quadrilateral', () => {
+  const notQuad = new Quadrilateral(3,9,22,3);
+  expect(notQuad.checkType()).toEqual("not a quadrilateral");
+});
